@@ -17,3 +17,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 # Navbar in Header.vue 
+
+# add to plugin vuetify
+$ vue add vuetify
