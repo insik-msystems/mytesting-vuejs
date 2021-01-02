@@ -3,7 +3,7 @@
         <v-layout align-center row wrap>
             <v-flex xs12>
                 <v-card>
-                    <v-toolbar color="blue" flat dense>
+                    <v-toolbar dark flat dense>
                         <v-toolbar-title>로그인</v-toolbar-title>
                     </v-toolbar>
 
@@ -17,6 +17,9 @@
                         type='password'
                         v-model="password"
                     ></v-text-field>
+                    <v-btn block large depressed color="primary" @click="login">
+                    로그인    
+                    </v-btn>
                     </div>
                 </v-card>
             </v-flex>
@@ -30,7 +33,31 @@ export default {
     data() {
         return {
             email: null,
-            password: null
+            password: null,
+            allUsers: [
+                {id: 1, name:'hoge', email: 'hoge@gmail.com', password:'12345'},
+                {id: 2, name:'fuga', email: 'fuga@gmail.com', password:'12345'}
+            ]
+        }
+    },
+    methods: {
+        login() {
+            let selectedUser = null
+            this.allUsers.forEach(user => {
+                if (user.email === this.email) {
+                    selectedUser = user
+                    return
+                }
+            })
+            if (selectedUser === null) {
+                alert('사용자가 없네요!')
+            } else {
+                if (selectedUser.password !== this.password) {
+                    alert('패스워드가 다르네요!')
+                } else {
+                    console.log('Login:', this.email, this.password)
+                }
+            }
         }
     }
 }
