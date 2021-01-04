@@ -49,15 +49,13 @@ export default {
                     return
                 }
             })
-            if (selectedUser === null) {
-                alert('사용자가 없네요!')
-            } else {
-                if (selectedUser.password !== this.password) {
-                    alert('패스워드가 다르네요!')
-                } else {
-                    console.log('Login:', this.email, this.password)
-                }
-            }
+            
+            // 삼항 연산자 테스트
+            selectedUser === null 
+             ? alert('사용자가 없네요!')
+             :  selectedUser.password !== this.password
+                ?  alert('패스워드가 다르네요!')
+                :  console.log('Login:', this.email, this.password)
         }
     }
 }
