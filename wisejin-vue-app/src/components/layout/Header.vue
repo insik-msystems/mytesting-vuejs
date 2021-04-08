@@ -25,7 +25,7 @@
             <b-dropdown-item href="#">FA</b-dropdown-item>
             </b-nav-item-dropdown>
 
-            <b-nav-item-dropdown right v-if='isLogin'>
+            <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
                 <em>User</em>
@@ -33,23 +33,13 @@
             <b-dropdown-item href="#">Profile</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
-            <b-nav-item-dropdown right v-else>
-            <!-- Using 'button-content' slot -->
-            <template #button-content>
-                <em>Login</em>
-            </template>
-            </b-nav-item-dropdown>
         </b-navbar-nav>
         </b-collapse>
     </b-navbar>
     </div>
 </template>
 <script>
-import { mapState } from "vuex"
 export default {
-    name: 'Header',
-    computed: {
-        ...mapState(['isLogin'])
-    }
+    name: 'Header'   
 }
 </script>
